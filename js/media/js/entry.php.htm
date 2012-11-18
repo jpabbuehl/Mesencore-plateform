@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+				
+	    <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+		<style type="text/css">
+			@import "/datatable/media/css/demo_page.css";
+			@import "/datatable/media/css/demo_table.css";
+		</style>		
+		<!--link type="text/css" href="/datatable/media/css/redmond/jquery-ui-1.8.21.custom.css" rel="Stylesheet" /-->	
+		<script type="text/javascript" language="javascript" src="entry.php_files/jquery_003.js"></script>  
+		<script type="text/javascript" language="javascript" src="entry.php_files/jquery-ui-1.js"></script>
+		<script type="text/javascript" language="javascript" src="entry.php_files/jquery.js"></script>			
+		<script class="jsbin" src="entry.php_files/jquery_004.js"></script>	
+		<script type="text/javascript" language="javascript" src="entry.php_files/TableTools.js"></script>
+		<script type="text/javascript" language="javascript" src="entry.php_files/jquery_002.js"></script>	
+		<script type="text/javascript"> 		
+			$(document).ready(function() {
+				var oTable = $('#example').dataTable( {
+        			"bJQueryUI": true,
+					"bStateSave": true,
+					"sPaginationType": "full_numbers",
+					"bProcessing": true,
+					"bServerSide": true,
+					"sAjaxSource": "\php\entry_server_processing.php",
+					"fnServerData": function ( sSource, aoData, fnCallback ) {
+						aoData.push( { "name" : "GENE_ID", "value" :   } );
+						$.getJSON( sSource, aoData, function (json) { 
+                        fnCallback(json);
+                    });
+					},
+					"sDom": 'T<"clear"><"H"lfr>t<"F"ip>',
+					"oTableTools": {
+						"sSwfPath": "/datatable/extras/TableTools/media/swf/copy_csv_xls_pdf.swf"
+					},
+					"aoColumnDefs": [
+						{ "fnRender": function ( oObj ) {
+							return '<a href="entry.php?var='+oObj.aData[0]+'">ENSMUST'+oObj.aData[0]+'</a>'; },
+							"mDataProp": null,
+							"sDefaultContent": "Edit",
+							"sClass": "my_class",
+							"aTargets": [0]
+						}
+					],
+					"fnDrawCallback": function () {
+						$('td.test').editable( '\php\entry_drug_edit.php', {
+							"callback": function( sValue, y ) {
+							/* Redraw the table from the new data on the server */
+							oTable.fnDraw();
+							},
+							"height": "14px"
+						} );
+					}
+				});
+				$("#example").dataTable().columnFilter( {
+					aoColumns:[
+						null,
+						{type: "text"},
+						{type: "text"},
+						{type: "number-range"},	
+						{type: "number-range"},
+						null,
+						null,
+						{type: "select", values:['0','1']},
+					]}		
+				);
+			});
+			
+		</script>                                                               
+	</head>                                                                 
+	<body id="dt_example">
+		<div id="container">
+		  <h1>Cancer-associated fibroblast Cluster</h1>	
+				�PNG
+
+
+IHDR��߇�IDATx��_d]I�?"�u]QU�*jE塢jUT�ZQ��
+�b�C�Z���"�jŊ��CUUTUԪ�U���"��"*��"��2�pv��oΙ�{����193��͟;�;���	
+�m����A�Bk�X����&gt;�	9G�:��������R�H���-{�|���
+LCg�VX�f���[��¯p�'Z�#���	%���5ހ�~G��`�IBs��,��
+��t9��Y��U����LlB����7�R��-0p%O�8&lt;�U�}���C�z�C��3�0𵣴��:�z
+V�h�n�;�Fe����5��^�	k�
+|��mkZ��@V3��0�䮞��$�A�����}��c00����ltίo�	
+�.�|�rho'�nF��/``��&gt;oD���T��`���oy��Yݿ�x
+&amp;�Q^�z@���רm� �d�6V�	
+�({h���k{n7&lt;V�%�l�[��2��G~}M�N��������,ճ����1�]��}�K``�O8��;e��^�d��:)u�?��&lt;���=���X�b��u0�
+eh�ɑ����ӫ����,x�Wk�[�h���p\H��K�u��]�5=5�t��\u!F'T`
+:��w��*%�`��Θ�y�{��Q�5��Ɗf�cX'��k͞3�
+K`BNwЁA��5��^��
+	�R^�\�/�F�R�5X����ؓV뷄Y�h�q=3``���1	
+�AK�d�.3X�Qg��0���[~-b��7y�i`V^��6Vt�q�7B9���e;������5�C*p6�����${).�݄X�&gt;��?���ЮV��+`Ba�l���g�
+�k=�]b�
+�Y�H�CV�,�S����5���XQ���:i���2�`�b^&gt;3y�P��@��y&gt;���v�1fl���y�m%w)�ce�b�k��^(B��
+ 
+k�q�V���}3��7�n{y�w`B��0��ω�6����0����z��۩^�Q8�P�n8c�~uH�
+���u8E8ס�f���0��p^������6�`�rBl�MA��N�$Ta3퓔�B˯�1R�3�n���Q�w�
+���Ἵk���J��[��^-�3��i��/j���'8�~���kϼ��_��E�o�X�J8SQ����b�1Za�с
+���h|-w�b;�����a^�,�,��`vp��ʯ���)�Q��21����yX�uX�vG��`m�9r$���{р��a&gt;�&amp;|�W0=��f$I?L�؀%���`V��
+	��T�ex	
+��l^$�&amp;�%��G��e޽ߋ$}v,!%�zh1_P|)r�p��ڒ�x!��-�=0U����'!��y���k{!��-�A�=�VB!�B!�B!�B!�B!�B!�B!�B!�B!��tG�EIEND�B`�
+  
+	
+			   <table class="display" id="example" border="0" cellpadding="0" cellspacing="0">
+				   <thead>
+						<tr>
+							<th>Ensembl ID</th>
+							<th>Symbol</th>
+							<th>Name</th>
+							<th>LCM Arrays</th>
+							<th>CD10 Arrays</th>
+							<th>PROTEIN</th>
+							<th>Secreted</th>
+							<th>Interest</th>
+						</tr>
+					</thead>
+					<tbody></tbody>	
+					<tfoot>
+						<tr>
+							<th>Ensembl ID</th>
+							<th>Symbol</th>
+							<th>Name</th>
+							<th>LCM Arrays</th>
+							<th>CD10 Arrays</th>
+							<th>PROTEIN</th>
+							<th>Secreted</th>
+							<th>Interest</th>
+						</tr>
+					</tfoot>
+				</table>  				                             
+		</div>	 
+	                                                                 
+</body></html>
